@@ -105,10 +105,8 @@ E-Commerce-fizzi/
 
 ## 🚀 Getting Started
 
-### Prerequisites
-
 - Node.js 18+
-- A [Prismic](https://prismic.io) account
+- 
 
 ### Option 1 — Full Setup with Prismic (Recommended)
 
