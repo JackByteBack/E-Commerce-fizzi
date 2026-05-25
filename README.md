@@ -105,33 +105,21 @@ E-Commerce-fizzi/
 
 ## 🚀 Getting Started
 
-- Node.js 18+
-
-### Option 1 — Full Setup with Prismic (Recommended)
-
-**1. Initialize from the starter template:**
-
-```bash
-npx @slicemachine/init@latest --starter course-fizzi-next
-```
-
-**2. In your Prismic dashboard, select:** `English - United States`
-
-**3. Run the content setup script:**
+**1. Run the content setup script:**
 
 ```bash
 npm run set-up-content
 ```
 
-**4. Open the migration release in Prismic and publish it** (the URL will be printed in your terminal).
+**2. Open the migration release in Prismic and publish it** (the URL will be printed in your terminal).
 
-**5. Configure Slice Simulator URL:**
+**3. Configure Slice Simulator URL:**
 
 ```
 http://localhost:3000/slice-simulator
 ```
 
-**6. Start the dev server:**
+**4. Start the dev server:**
 
 ```bash
 npm run dev
