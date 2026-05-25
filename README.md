@@ -25,3 +25,4 @@ If you don’t want to go through the tutorial, but want your own version of the
 5. Set up the slice simulator URL: `http://localhost:3000/slice-simulator`
 # E-Commerce-fizzi
 # E-Commerce-fizzi
+# E-Commerce-fizzi
