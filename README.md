@@ -1,103 +1,72 @@
-# 🥤 Fizzi — 3D Animated E-Commerce Landing Page
+# 🥤 Fizzi — 3D E-Commerce Landing Page
 
-<p align="center">
-  <img src="public/hdr/lobby.hdr" alt="Fizzi Banner" />
-</p>
+A stunning, interactive 3D e-commerce landing page for **Fizzi**, a fictional soda brand. Built as part of the Prismic + Next.js course, this project showcases advanced web animations, 3D rendering, and modern frontend architecture.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Next.js-14-black?logo=nextdotjs" />
-  <img src="https://img.shields.io/badge/React-18-61DAFB?logo=react" />
-  <img src="https://img.shields.io/badge/Three.js-0.167-black?logo=threedotjs" />
-  <img src="https://img.shields.io/badge/GSAP-3.12-88CE02?logo=greensock" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-v3-38BDF8?logo=tailwindcss" />
-  <img src="https://img.shields.io/badge/Prismic-CMS-5163BA?logo=prismic" />
-  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript" />
-</p>
-
-<p align="center">
-  A fully animated, 3D e-commerce landing page for the fictional soda brand <strong>Fizzi</strong> — built with Next.js, React Three Fiber, GSAP ScrollTrigger, and Prismic CMS.
-</p>
-
-<p align="center">
-  <a href="https://github.com/JackByteBack/E-Commerce-fizzi">View Repo</a> •
-  <a href="https://dub.sh/fizzi">Course Docs</a>
-</p>
+> **Live Site:** [View Demo](#) &nbsp;|&nbsp; **Course:** [Prismic YouTube Course](#)
 
 ---
 
 ## ✨ Features
 
-- **3D Soda Can** rendered with React Three Fiber & GLTF model
-- **Scroll-driven animations** via GSAP ScrollTrigger
-- **Flavor carousel** — switch between 5 soda flavors with animated transitions
-- **Animated bubble particles** using Three.js instanced meshes
-- **CMS-powered content** through Prismic slices
-- **Wavy circle SVG animations** & circular spinning text
-- **Text splitting** for per-character entrance animations
-- **Responsive design** with Tailwind CSS v3
-- **Accessibility** — respects `prefers-reduced-motion`
-- **Zustand** for lightweight 3D scene state management
+- **Interactive 3D Soda Cans** — Rendered with Three.js & React Three Fiber, with real-time label swapping per flavor
+- **GSAP Animations** — Smooth scroll-triggered animations, text splitters, and hero transitions
+- **Flavor Carousel** — Browse 5 soda flavors (Black Cherry, Grape, Lemon Lime, Strawberry Lemonade, Watermelon Crush) with animated wavy circles
+- **Bubble Physics** — Instanced mesh bubbles that float upward using `useFrame`
+- **CMS-Powered Content** — All text and slices managed via Prismic
+- **Accessible** — Respects `prefers-reduced-motion` via GSAP MatchMedia
+- **Responsive Design** — Fully mobile-optimized with Tailwind CSS v3
 
 ---
 
-## 🛠️ Tech Stack
+## 🧱 Tech Stack
 
-| Category     | Technology               |
-| ------------ | ------------------------ |
-| Framework    | Next.js 14 (App Router)  |
-| Language     | TypeScript 5             |
-| Styling      | Tailwind CSS v3          |
-| 3D Rendering | React Three Fiber + Drei |
-| 3D Model     | Three.js / GLTF          |
-| Animation    | GSAP 3 + ScrollTrigger   |
-| CMS          | Prismic                  |
-| State        | Zustand                  |
-| Fonts        | Alpino (custom)          |
+| Technology | Purpose |
+|---|---|
+| [Next.js 14](https://nextjs.org/docs) | React framework & routing |
+| [Prismic](https://prismic.io/docs) | Headless CMS / Slice Machine |
+| [Three.js](https://threejs.org/) | 3D rendering engine |
+| [React Three Fiber](https://docs.pmnd.rs/react-three-fiber) | React bindings for Three.js |
+| [Drei](https://github.com/pmndrs/drei) | R3F helpers (`useGLTF`, `useTexture`, etc.) |
+| [GSAP](https://gsap.com/docs/v3/) | Animation library + ScrollTrigger |
+| [Tailwind CSS v3](https://v3.tailwindcss.com/docs/installation) | Utility-first CSS styling |
+| [Zustand](https://github.com/pmndrs/zustand) | Lightweight state management |
+| [clsx](https://github.com/lukeed/clsx) | Conditional className utility |
+| [Vercel](https://vercel.com/docs/frameworks/nextjs) | Deployment platform |
 
 ---
 
 ## 📁 Project Structure
 
 ```
-E-Commerce-fizzi/
+fizzi/
 ├── public/
-│   ├── Soda-can.gltf          # 3D soda can model
-│   ├── Soda-can.bin
-│   ├── labels/                # Flavor label textures
-│   │   ├── lemon-lime.png
-│   │   ├── grape.png
-│   │   ├── cherry.png
-│   │   ├── strawberry.png
-│   │   └── watermelon.png
-│   ├── hdr/                   # Environment lighting
-│   └── fonts/
-│
+│   ├── Soda-can.gltf         # 3D soda can model
+│   └── labels/               # Flavor label textures
+│       ├── lemon-lime.png
+│       ├── grape.png
+│       ├── cherry.png
+│       ├── strawberry.png
+│       └── watermelon.png
 ├── src/
-│   ├── app/                   # Next.js App Router pages
-│   ├── components/            # Shared UI components
-│   │   ├── Bounded.tsx        # Layout wrapper
-│   │   ├── Button.tsx
-│   │   ├── CircleText.tsx     # Spinning circular SVG text
-│   │   ├── FizziLogo.tsx      # Animated SVG logo
-│   │   ├── FloatingCan.tsx    # Floating 3D can wrapper
-│   │   ├── Footer.tsx
-│   │   ├── Header.tsx
-│   │   ├── SodaCan.tsx        # Core 3D can component
-│   │   ├── TextSplitter.tsx   # Per-character text animation
-│   │   └── ViewCanvas.tsx     # R3F canvas setup
+│   ├── app/                  # Next.js App Router
+│   ├── components/
+│   │   ├── Bounded.tsx       # Layout wrapper component
+│   │   ├── FizziLogo.tsx     # Animated SVG logo
+│   │   └── SodaCan.tsx       # 3D can component (R3F)
 │   ├── hooks/
-│   │   ├── useMediaQuery.ts   # SSR-safe media query hook
-│   │   └── useStore.ts        # Zustand store
-│   └── slices/                # Prismic content slices
-│       ├── Hero/              # Hero section + Bubbles + TextSplitter
-│       ├── AlternatingText/   # Alternating feature text
-│       ├── BigText/
-│       ├── Carousel/          # Flavor picker carousel
-│       └── SkyDive/
-│
-├── customtypes/               # Prismic custom types
+│   │   └── useMediaQuery.ts  # SSR-safe media query hook
+│   └── slices/
+│       ├── Hero/
+│       │   ├── index.tsx
+│       │   ├── TextSplitter.tsx   # Per-character text animation
+│       │   └── Bubbles.tsx        # Instanced mesh bubbles
+│       ├── Carousel/
+│       │   ├── index.tsx
+│       │   ├── ArrowIcon.tsx
+│       │   └── WavyCircles.tsx    # GSAP rotating SVG rings
+│       └── AlternatingText/
+│           └── CircleText.tsx     # Spinning "Love your gut" badge
 ├── tailwind.config.js
-├── next.config.mjs
 └── slicemachine.config.json
 ```
 
@@ -108,173 +77,173 @@ E-Commerce-fizzi/
 ### Prerequisites
 
 - Node.js 18+
-- A [Prismic](https://prismic.io) account
+- A [Prismic](https://prismic.io) account (free)
 
-### Option 1 — Full Setup with Prismic (Recommended)
-
-**1. Initialize from the starter template:**
+### Installation
 
 ```bash
-npx @slicemachine/init@latest --starter course-fizzi-next
-```
-
-**2. In your Prismic dashboard, select:** `English - United States`
-
-**3. Run the content setup script:**
-
-```bash
-npm run set-up-content
-```
-
-**4. Open the migration release in Prismic and publish it** (the URL will be printed in your terminal).
-
-**5. Configure Slice Simulator URL:**
-
-```
-http://localhost:3000/slice-simulator
-```
-
-**6. Start the dev server:**
-
-```bash
-npm run dev
-```
-
-This runs Next.js and Slice Machine concurrently.
-
----
-
-### Option 2 — Clone this Repo Directly
-
-```bash
+# Clone the repository
 git clone https://github.com/JackByteBack/E-Commerce-fizzi.git
 cd E-Commerce-fizzi
+
+# Install dependencies
 npm install
+
+# Set up environment variables
+cp .env.example .env.local
+# Add your NEXT_PUBLIC_PRISMIC_ENVIRONMENT variable
 ```
 
-Create a `.env.local` file:
-
-```env
-NEXT_PUBLIC_PRISMIC_ENVIRONMENT=your-prismic-repo-name
-```
-
-Then run:
+### Development
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Prismic Setup
+
+1. Create a Prismic repository
+2. Run the Slice Machine: `npm run slicemachine`
+3. Push your slice models to Prismic
+4. Add content via the Prismic editor
 
 ---
 
-## 🧩 Prismic Slices
+## 🎨 Customization
 
-| Slice             | Description                                                       |
-| ----------------- | ----------------------------------------------------------------- |
-| `Hero`            | Full-screen hero with 3D can, animated text, and bubble particles |
-| `AlternatingText` | Feature sections with alternating left/right layout               |
-| `BigText`         | Large display text for section breaks                             |
-| `Carousel`        | Interactive flavor picker with animated soda can                  |
-| `SkyDive`         | Scroll-triggered sky dive animation sequence                      |
+### Soda Flavors
 
----
+Edit the `FLAVORS` array in `slices/Carousel/index.tsx`:
 
-## 🎨 Soda Flavors
+```ts
+const FLAVORS = [
+  { flavor: "blackCherry",        color: "#710523", name: "Black Cherry" },
+  { flavor: "grape",              color: "#572981", name: "Grape Goodness" },
+  { flavor: "lemonLime",          color: "#164405", name: "Lemon Lime" },
+  { flavor: "strawberryLemonade", color: "#690B3D", name: "Strawberry Lemonade" },
+  { flavor: "watermelon",         color: "#4B7002", name: "Watermelon Crush" },
+];
+```
 
-| Key                  | Color     | Name                |
-| -------------------- | --------- | ------------------- |
-| `blackCherry`        | `#710523` | Black Cherry        |
-| `grape`              | `#572981` | Grape Goodness      |
-| `lemonLime`          | `#164405` | Lemon Lime          |
-| `strawberryLemonade` | `#690B3D` | Strawberry Lemonade |
-| `watermelon`         | `#4B7002` | Watermelon Crush    |
+### Can Labels
 
----
+Replace the PNG textures in `/public/labels/` — label dimensions and flip settings are managed in `SodaCan.tsx`.
 
-## 🎬 Key Animations
+### Brand / Logo
 
-- **GSAP ScrollTrigger** — scroll-driven 3D can rotation and section reveals
-- **Instanced Bubbles** — Three.js `InstancedMesh` for 300 performant animated bubble particles
-- **Per-character text** — `TextSplitter` component splits words into individually animatable `<span>` elements
-- **Wavy circles** — Dual counter-rotating SVG rings using GSAP `useGSAP`
-- **Circular text** — CSS `animate-spin-slow` on an SVG path
-- **Logo wave mask** — Animated fill mask on the Fizzi SVG logo
+A Figma file is available with all label templates, renders, and brand assets. The Blender source file for the soda can is included in the course assets zip.
 
----
+### Tailwind Animations
 
-## 📜 Available Scripts
+Custom keyframes are defined in `tailwind.config.js`:
 
-```bash
-npm run dev          # Start Next.js + Slice Machine concurrently
-npm run next:dev     # Next.js dev server only
-npm run build        # Production build
-npm run start        # Start production server
-npm run lint         # ESLint
-npm run format       # Prettier
-npm run set-up-content  # Seed Prismic content
+```js
+keyframes: {
+  "slide-left": {
+    "0%":   { transform: "translateX(0)" },
+    "100%": { transform: "translateX(-100%)" },
+  },
+},
+animation: {
+  "slide-left": "slide-left 3s linear infinite",
+  "spin-slow":  "spin 6s linear infinite",
+},
 ```
 
 ---
 
-## 🔗 Resources & Documentation
+## 📦 Key Components
 
-### Core Libraries
+### `SodaCan.tsx`
+Renders the GLTF 3D model with dynamically swapped flavor label textures using `useGLTF` and `useTexture` from Drei.
 
+### `TextSplitter.tsx`
+Splits text into individual `<span>` elements per character, enabling per-character GSAP animations in the Hero section.
+
+### `Bubbles.tsx`
+Uses Three.js `InstancedMesh` for performant rendering of 300+ animated bubble spheres with randomized speeds via `useFrame`.
+
+### `WavyCircles.tsx`
+Two SVG wavy rings that counter-rotate using GSAP — inner ring clockwise (16s), outer ring counter-clockwise (22s).
+
+### `Bounded.tsx`
+A reusable section wrapper that applies consistent horizontal padding and max-width centering across all slices.
+
+### `useMediaQuery.ts`
+An SSR-safe media query hook built with `useSyncExternalStore` — used to conditionally enable/disable animations.
+
+---
+
+## 🌐 Deployment
+
+### Deploy to Vercel
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+```
+
+Add your `NEXT_PUBLIC_PRISMIC_ENVIRONMENT` environment variable in the Vercel dashboard.
+
+For automatic redeployment when Prismic content changes, set up a [Prismic Webhook](https://prismic.io/docs/webhooks) pointing to your Vercel deploy hook URL.
+
+---
+
+## ♿ Accessibility
+
+- All animations respect the user's `prefers-reduced-motion` OS setting via [GSAP MatchMedia](https://gsap.com/docs/v3/GSAP/gsap.matchMedia())
+- SVG logos include `<title>` elements for screen readers
+- Semantic HTML structure throughout
+
+---
+
+## ⚠️ Troubleshooting
+
+| Issue | Solution |
+|---|---|
+| Tailwind v4 compatibility errors | This project uses **Tailwind v3**. Install it from [v3.tailwindcss.com](https://v3.tailwindcss.com/docs/installation) |
+| 3D model not loading | Ensure `Soda-can.gltf` and all textures are in the `/public` directory |
+| Prismic slices not rendering | Compare with the [final course repo](https://github.com/prismicio-community/course-fizzi-next) |
+| Build errors | Open a thread on [Prismic Community Forums](https://community.prismic.io) |
+
+---
+
+## 📚 Documentation & Resources
+
+**Core**
 - [Next.js Docs](https://nextjs.org/docs)
 - [Prismic Docs](https://prismic.io/docs)
-- [Tailwind CSS v3](https://v3.tailwindcss.com/docs/installation)
+
+**Styling**
+- [Tailwind CSS v3 Docs](https://v3.tailwindcss.com)
+- [clsx Docs](https://github.com/lukeed/clsx)
+
+**3D**
+- [React Three Fiber Docs](https://docs.pmnd.rs/react-three-fiber)
+- [Drei Docs](https://github.com/pmndrs/drei)
+- [GLTF → R3F Converter](https://gltf.pmnd.rs/)
+
+**Animation**
 - [GSAP Docs](https://gsap.com/docs/v3/)
 - [GSAP ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/)
-- [React Three Fiber](https://r3f.docs.pmnd.rs/)
-- [Drei (R3F helpers)](https://drei.pmnd.rs/)
-- [Zustand](https://zustand.docs.pmnd.rs/)
+- [GSAP Ease Visualizer](https://gsap.com/resources/ease-visualizer/)
 
-### Utilities
-
-- [GSAP Ease Visualizer](https://gsap.com/resources/getting-started/Easing)
-- [GLTF → R3F Converter](https://gltf.pmnd.rs/)
-- [clsx Docs](https://github.com/lukeed/clsx)
-- [Alpino Font](https://fonts.google.com/)
-- [R3F-Perf](https://github.com/utsuboco/r3f-perf)
-
-### Accessibility
-
-- [usePrefersReducedMotion](https://www.joshwcomeau.com/react/prefers-reduced-motion/)
-- [GSAP MatchMedia](https://gsap.com/docs/v3/GSAP/gsap.matchMedia/)
-
----
-
-## ⚠️ Tailwind Version Note
-
-> This project uses **Tailwind CSS v3**. Tailwind v4 has a fundamentally different configuration API and is **not compatible**. Install v3 explicitly:
-
-```bash
-npm install tailwindcss@3
-```
-
-See [v3 installation docs](https://v3.tailwindcss.com/docs/installation) if you run into issues.
-
----
-
-## 🐛 Troubleshooting
-
-- **Build errors** — Compare against the [original Fizzi repo](https://github.com/prismicio-community/nextjs-course-fizzi)
-- **Content not loading** — Make sure your `.env.local` is set and content migration was published in Prismic
-- **3D model not showing** — Check that `Soda-can.gltf` and `Soda-can.bin` are in `/public/`
-- **Tailwind styles broken** — Ensure you're using Tailwind v3, not v4
-- **Community support** — [Prismic Community Forums](https://community.prismic.io/)
-
----
-
-## 👤 Author
-
-**Jack Obito** — [@JackByteBack](https://github.com/JackByteBack)
-
-> Built as part of a hands-on course project — BCA student @ TCET Mumbai, focused on full-stack development and interactive web experiences.
+**State & Fonts**
+- [Zustand Docs](https://github.com/pmndrs/zustand)
+- [Font: Alpino](https://fonts.google.com/)
+- [Adding Fonts to Next.js](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts)
 
 ---
 
 ## 📄 License
 
-Licensed under the [Apache 2.0 License](./LICENSE).
+This project is built for educational purposes as part of the Prismic + Next.js course. Feel free to customize it into your own soda brand!
+
+---
+
+<p align="center">Made with 💚 by <a href="https://github.com/JackByteBack">JackByteBack</a></p>
