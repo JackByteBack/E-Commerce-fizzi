@@ -24,3 +24,4 @@ If you don’t want to go through the tutorial, but want your own version of the
 4. Open the migration release and publish it. A URL will be printed on the screen.
 5. Set up the slice simulator URL: `http://localhost:3000/slice-simulator`
 # E-Commerce-fizzi
+# E-Commerce-fizzi
