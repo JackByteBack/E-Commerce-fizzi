@@ -235,7 +235,6 @@ See [v3 installation docs](https://v3.tailwindcss.com/docs/installation) if you 
 
 ## 🐛 Troubleshooting
 
-- **Build errors** — Compare against the [original Fizzi repo](https://github.com/prismicio-community/nextjs-course-fizzi)
 - **Content not loading** — Make sure your `.env.local` is set and content migration was published in Prismic
 - **3D model not showing** — Check that `Soda-can.gltf` and `Soda-can.bin` are in `/public/`
 - **Tailwind styles broken** — Ensure you're using Tailwind v3, not v4
