@@ -106,7 +106,6 @@ E-Commerce-fizzi/
 ## 🚀 Getting Started
 
 - Node.js 18+
-- 
 
 ### Option 1 — Full Setup with Prismic (Recommended)
 
@@ -150,14 +149,6 @@ cd E-Commerce-fizzi
 npm install
 ```
 
-Create a `.env.local` file:
-
-```env
-NEXT_PUBLIC_PRISMIC_ENVIRONMENT=your-prismic-repo-name
-```
-
-Then run:
-
 ```bash
 npm run dev
 ```
@@ -166,7 +157,7 @@ Open [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 🧩 Prismic Slices
+## 🧩 Tools
 
 | Slice             | Description                                                       |
 | ----------------- | ----------------------------------------------------------------- |
@@ -210,7 +201,6 @@ npm run build        # Production build
 npm run start        # Start production server
 npm run lint         # ESLint
 npm run format       # Prettier
-npm run set-up-content  # Seed Prismic content
 ```
 
 ---
@@ -261,18 +251,8 @@ See [v3 installation docs](https://v3.tailwindcss.com/docs/installation) if you 
 - **Content not loading** — Make sure your `.env.local` is set and content migration was published in Prismic
 - **3D model not showing** — Check that `Soda-can.gltf` and `Soda-can.bin` are in `/public/`
 - **Tailwind styles broken** — Ensure you're using Tailwind v3, not v4
-- **Community support** — [Prismic Community Forums](https://community.prismic.io/)
-
 ---
-
-## 👤 Author
-
-**Jack Obito** — [@JackByteBack](https://github.com/JackByteBack)
 
 > Built as part of a hands-on course project — BCA student @ TCET Mumbai, focused on full-stack development and interactive web experiences.
 
 ---
-
-## 📄 License
-
-Licensed under the [Apache 2.0 License](./LICENSE).
